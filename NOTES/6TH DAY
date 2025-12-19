@@ -1,0 +1,111 @@
+====================================================================
+📌 CARDINALITY IN DBMS (NOTES + EXAMPLES)
+====================================================================
+
+CARDINALITY defines the **number of relationships**
+between entities in a database.
+
+It tells us **HOW MANY instances of one entity**
+can be associated with **HOW MANY instances of another entity**.
+
+====================================================================
+WHY DO WE USE CARDINALITY?
+--------------------------------------------------------------------
+✔ To define relationship constraints  
+✔ To design accurate ER diagrams  
+✔ To avoid data redundancy  
+✔ To maintain data integrity  
+✔ To understand real-world relationships  
+
+====================================================================
+TYPES OF CARDINALITY
+--------------------------------------------------------------------
+1️⃣ One-to-One (1 : 1)  
+2️⃣ One-to-Many (1 : M)  
+3️⃣ Many-to-One (M : 1)  
+4️⃣ Many-to-Many (M : M)  
+
+====================================================================
+# 1️⃣ ONE-TO-ONE (1 : 1)
+# ---------------------------------------------------------------
+DEFINITION:
+One record in Entity A is associated with
+ONLY one record in Entity B.
+
+Example:
+Person ↔ Passport  
+
+✔ One person has one passport  
+✔ One passport belongs to one person  
+
+USE:
+✔ When both entities are tightly connected  
+
+====================================================================
+# 2️⃣ ONE-TO-MANY (1 : M)
+# ---------------------------------------------------------------
+DEFINITION:
+One record in Entity A can be associated with
+MULTIPLE records in Entity B.
+
+Example:
+Department → Employee  
+
+✔ One department has many employees  
+✔ Each employee belongs to one department  
+
+USE:
+✔ Most common relationship in DBMS  
+
+====================================================================
+# 3️⃣ MANY-TO-ONE (M : 1)
+# ---------------------------------------------------------------
+DEFINITION:
+Multiple records in Entity A are associated with
+ONLY one record in Entity B.
+
+Example:
+Employee → Department  
+
+✔ Many employees work in one department  
+
+NOTE:
+✔ Reverse of One-to-Many  
+
+====================================================================
+# 4️⃣ MANY-TO-MANY (M : M)
+# ---------------------------------------------------------------
+DEFINITION:
+Multiple records in Entity A are associated with
+MULTIPLE records in Entity B.
+
+Example:
+Student ↔ Course  
+
+✔ One student enrolls in many courses  
+✔ One course has many students  
+
+IMPLEMENTATION:
+✔ Requires a **junction (bridge) table**  
+
+Example:
+STUDENT_COURSE(student_id, course_id)
+
+====================================================================
+CARDINALITY VS DEGREE
+--------------------------------------------------------------------
+✔ Cardinality → Number of relationships  
+✔ Degree → Number of attributes  
+
+====================================================================
+SUMMARY
+====================================================================
+
+✔ Cardinality defines relationship count  
+✔ Used in ER diagrams  
+✔ Helps database design  
+✔ Prevents data inconsistency  
+✔ Essential for normalization  
+
+END OF NOTES
+====================================================================

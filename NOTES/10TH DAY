@@ -1,0 +1,136 @@
+🔤 SQL STRING FUNCTIONS – SIMPLE NOTES
+1️⃣ UPPER()
+
+Converts text to CAPITAL letters
+
+Example:
+upper('akash') → AKASH
+
+2️⃣ LOWER()
+
+Converts text to small letters
+
+Example:
+lower('AKASH') → akash
+
+3️⃣ LENGTH()
+
+Counts number of characters
+
+Example:
+length('India') → 5
+
+4️⃣ CONCAT()
+
+Joins two or more strings
+
+Example:
+concat('Akash',' Nagar') → Akash Nagar
+
+5️⃣ SUBSTRING() / SUBSTR()
+
+Gets part of a string
+
+Example:
+substring('Computer',1,4) → Comp
+
+6️⃣ LEFT()
+
+Returns left-side characters
+
+Example:
+left('Database',4) → Data
+
+7️⃣ RIGHT()
+
+Returns right-side characters
+
+Example:
+right('Database',4) → base
+
+8️⃣ TRIM()
+
+Removes spaces from both sides
+
+Example:
+trim(' SQL ') → SQL
+
+9️⃣ LTRIM()
+
+Removes left-side spaces
+
+Example:
+ltrim(' SQL') → SQL
+
+🔟 RTRIM()
+
+Removes right-side spaces
+
+Example:
+rtrim('SQL ') → SQL
+
+1️⃣1️⃣ REPLACE()
+
+Replaces word in a string
+
+Example:
+replace('I love Java','Java','SQL') → I love SQL
+
+1️⃣2️⃣ REVERSE()
+
+Reverses the string
+
+Example:
+reverse('SQL') → LQS
+
+1️⃣3️⃣ INSTR()
+
+Finds position of a word
+
+Example:
+instr('Database','base') → 5
+
+1️⃣4️⃣ ASCII()
+
+Gives ASCII value of character
+
+Example:
+ascii('A') → 65
+
+1️⃣5️⃣ CHAR()
+
+Gives character from ASCII
+
+Example:
+char(65) → A
+
+1️⃣6️⃣ LPAD()
+
+Adds characters on left side
+
+Example:
+lpad('5',3,'0') → 005
+
+1️⃣7️⃣ RPAD()
+
+Adds characters on right side
+
+Example:
+rpad('5',3,'0') → 500
+
+1️⃣8️⃣ FORMAT()
+
+Formats number as string
+
+Example:
+format(12345.67,2) → 12,345.67
+
+⭐ MOST IMPORTANT (EXAM)
+
+✔ UPPER
+✔ LOWER
+✔ LENGTH
+✔ SUBSTRING
+✔ CONCAT
+✔ TRIM
+✔ REPLACE

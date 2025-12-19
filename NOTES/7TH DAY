@@ -1,0 +1,88 @@
+====================================================================
+📌 SUPER KEY IN DBMS (NOTES + EXAMPLES)
+====================================================================
+
+A SUPER KEY is a set of **one or more attributes**
+that can **uniquely identify a record (tuple)** in a table.
+
+A Super Key may contain **extra attributes** along with the
+attribute(s) required for uniqueness.
+
+====================================================================
+WHY DO WE USE SUPER KEY?
+--------------------------------------------------------------------
+✔ To uniquely identify rows in a table  
+✔ To avoid duplicate records  
+✔ To help in identifying candidate keys  
+✔ To maintain data integrity  
+
+====================================================================
+DEFINITION (EXAM READY)
+--------------------------------------------------------------------
+A Super Key is a combination of attributes that
+**uniquely identifies each record in a relation**.
+
+====================================================================
+EXAMPLE TABLE: STUDENT
+--------------------------------------------------------------------
+| Roll_No | Aadhaar | Name | Email |
+--------------------------------------------------------------------
+
+Possible SUPER KEYS:
+--------------------------------------------------------------------
+✔ {Roll_No}  
+✔ {Aadhaar}  
+✔ {Email}  
+✔ {Roll_No, Name}  
+✔ {Roll_No, Email}  
+✔ {Aadhaar, Name}  
+
+NOTE:
+Even if **one attribute is enough**, adding extra attributes
+still makes it a **Super Key**.
+
+====================================================================
+SUPER KEY vs CANDIDATE KEY
+--------------------------------------------------------------------
+✔ Super Key:
+   → May contain extra attributes  
+   → Used to identify records  
+
+✔ Candidate Key:
+   → Minimal Super Key  
+   → No extra attributes  
+
+Example:
+If {Roll_No, Name} is a Super Key  
+Then {Roll_No} is a Candidate Key  
+
+====================================================================
+SUPER KEY vs PRIMARY KEY
+--------------------------------------------------------------------
+✔ Super Key:
+   → Many possible  
+   → Can have NULL values  
+
+✔ Primary Key:
+   → Only one per table  
+   → Cannot be NULL  
+   → Chosen from Candidate Keys  
+
+====================================================================
+IMPORTANT POINTS
+--------------------------------------------------------------------
+✔ Every Primary Key is a Super Key  
+✔ Every Candidate Key is a Super Key  
+✔ But NOT every Super Key is a Candidate Key  
+✔ Super Key is the **base concept of keys**  
+
+====================================================================
+SUMMARY
+====================================================================
+✔ Super Key uniquely identifies records  
+✔ May contain extra attributes  
+✔ Used to find Candidate & Primary Keys  
+✔ Fundamental concept in DBMS  
+
+END OF NOTES
+====================================================================

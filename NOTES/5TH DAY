@@ -1,0 +1,154 @@
+====================================================================
+📌 DATA MODELS IN DBMS (NOTES + EXAMPLES)
+====================================================================
+
+A Data Model defines HOW data is structured, stored, organized,
+and manipulated in a database system.
+
+It acts as a **blueprint** for designing databases.
+
+====================================================================
+WHY DO WE USE DATA MODELS?
+--------------------------------------------------------------------
+✔ To represent real-world data logically  
+✔ To define relationships between data  
+✔ To ensure data consistency & integrity  
+✔ To simplify database design  
+✔ To support efficient data storage & retrieval  
+
+====================================================================
+TYPES OF DATA MODELS IN DBMS
+--------------------------------------------------------------------
+1️⃣ Hierarchical Data Model  
+2️⃣ Network Data Model  
+3️⃣ Relational Data Model  
+4️⃣ Entity-Relationship (ER) Model  
+5️⃣ Object-Oriented Data Model  
+
+====================================================================
+# 1️⃣ HIERARCHICAL DATA MODEL
+# ---------------------------------------------------------------
+DEFINITION:
+Data is organized in a **tree-like structure** with
+Parent → Child relationship.
+
+✔ One parent  
+✔ Many children  
+✔ Top-down access  
+
+Example:
+Company → Department → Employee  
+
+ADVANTAGES:
+✔ Simple structure  
+✔ Fast data access  
+
+DISADVANTAGES:
+❌ No many-to-many relationship  
+❌ Rigid structure  
+
+====================================================================
+# 2️⃣ NETWORK DATA MODEL
+# ---------------------------------------------------------------
+DEFINITION:
+Data is organized using a **graph structure** where
+a record can have multiple parents and children.
+
+Example:
+Student ↔ Course  
+
+ADVANTAGES:
+✔ Supports many-to-many relationships  
+✔ More flexible than hierarchical  
+
+DISADVANTAGES:
+❌ Complex structure  
+❌ Difficult to maintain  
+
+====================================================================
+# 3️⃣ RELATIONAL DATA MODEL (MOST USED)
+# ---------------------------------------------------------------
+DEFINITION:
+Data is stored in **tables (relations)** with rows and columns.
+
+✔ Rows → Records  
+✔ Columns → Attributes  
+
+Example:
+STUDENT(student_id, name, age)
+
+KEYS:
+✔ Primary Key  
+✔ Foreign Key  
+
+ADVANTAGES:
+✔ Simple & powerful  
+✔ Data integrity  
+✔ Easy to query using SQL  
+
+DISADVANTAGES:
+❌ Performance issues with very large data  
+
+====================================================================
+# 4️⃣ ENTITY-RELATIONSHIP (ER) MODEL
+# ---------------------------------------------------------------
+DEFINITION:
+A **conceptual model** used to design database structure
+before implementation.
+
+COMPONENTS:
+✔ Entity  
+✔ Attribute  
+✔ Relationship  
+
+Example:
+STUDENT — ENROLLS — COURSE  
+
+USE:
+✔ Database design phase  
+✔ ER diagrams  
+
+====================================================================
+# 5️⃣ OBJECT-ORIENTED DATA MODEL
+# ---------------------------------------------------------------
+DEFINITION:
+Data is stored as **objects** similar to OOP concepts.
+
+Features:
+✔ Classes  
+✔ Objects  
+✔ Inheritance  
+✔ Encapsulation  
+
+Example:
+Class Student { name, marks }
+
+ADVANTAGES:
+✔ Suitable for complex data  
+✔ Supports multimedia  
+
+DISADVANTAGES:
+❌ Complex  
+❌ Less commonly used  
+
+====================================================================
+REAL-WORLD USAGE
+--------------------------------------------------------------------
+✔ Hierarchical → File systems  
+✔ Network → Telecom systems  
+✔ Relational → MySQL, Oracle, SQL Server  
+✔ ER Model → Database design  
+✔ Object-Oriented → Multimedia & CAD  
+
+====================================================================
+SUMMARY
+====================================================================
+
+✔ Data Models define structure of data  
+✔ ER Model is for design  
+✔ Relational Model is most popular  
+✔ Keys & relationships ensure integrity  
+✔ Data models help build efficient DBMS  
+
+END OF NOTES
+====================================================================

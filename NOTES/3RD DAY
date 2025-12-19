@@ -1,0 +1,175 @@
+====================================================================
+📌 SQL STRING FUNCTIONS & DATABASE COMMANDS (NOTES + EXAMPLES)
+====================================================================
+
+These commands & functions are used to:
+✔ Explore databases  
+✔ Manipulate text data  
+✔ Format output  
+✔ Perform pattern-based operations  
+
+====================================================================
+# 1️⃣ DATABASE EXPLORATION COMMANDS
+# ---------------------------------------------------------------
+
+SHOW DATABASES;
+→ Displays all available databases in MySQL server.
+
+USE world;
+→ Selects the "world" database for execution.
+
+SHOW TABLES;
+→ Displays all tables inside the selected database.
+
+====================================================================
+# 2️⃣ UPPER() & LOWER()
+# ---------------------------------------------------------------
+Used to convert text into uppercase or lowercase.
+
+SELECT name, UPPER(name), LOWER(name)  
+FROM country;
+
+USE:
+✔ Data formatting  
+✔ Case-insensitive comparisons  
+
+====================================================================
+# 3️⃣ CONCAT() FUNCTION
+# ---------------------------------------------------------------
+Used to join multiple values into a single string.
+
+SELECT name, code, continent,  
+CONCAT(continent,'-',code,'regex')  
+FROM country;
+
+USE:
+✔ Merge columns  
+✔ Create formatted output  
+
+====================================================================
+# 4️⃣ CONCAT_WS() (With Separator)
+# ---------------------------------------------------------------
+WS → With Separator
+
+SELECT name, continent,  
+CONCAT_WS('-', continent, code, 'regex')  
+FROM country;
+
+ADVANTAGE:
+✔ Cleaner syntax  
+✔ Automatically handles NULL values  
+
+====================================================================
+# 5️⃣ SUBSTR() / SUBSTRING()
+# ---------------------------------------------------------------
+Extracts part of a string.
+
+SYNTAX:
+SUBSTR(column, start, length)
+
+Examples:
+
+-- Start from first character
+SELECT name, SUBSTR(name, 1)  
+FROM country;
+
+-- Extract last 5 characters
+SELECT name, SUBSTR(name, -5)  
+FROM country;
+
+====================================================================
+# 6️⃣ SUBSTR() WITH CONDITIONS
+# ---------------------------------------------------------------
+
+-- Matching first character of name & continent
+SELECT name, continent,  
+SUBSTR(name,1,1), SUBSTR(continent,1,1)  
+FROM country  
+WHERE SUBSTR(name,1,1) = SUBSTR(continent,1,1);
+
+-- Match first 3 characters
+SELECT name, continent, SUBSTR(name,1,3)  
+FROM country  
+WHERE SUBSTR(name,1,3) = 'Alg';
+
+====================================================================
+# 7️⃣ LIKE OPERATOR (Pattern Matching)
+# ---------------------------------------------------------------
+
+SELECT name, continent  
+FROM country  
+WHERE name LIKE 'Alg%';
+
+% → matches zero or more characters
+
+====================================================================
+# 8️⃣ INSTR() FUNCTION
+# ---------------------------------------------------------------
+Used to find position of a character inside a string.
+
+SELECT name, INSTR(name,'e')  
+FROM country;
+
+Returns:
+✔ Position of character  
+✔ 0 if character not found  
+
+====================================================================
+# 9️⃣ LENGTH() vs CHAR_LENGTH()
+# ---------------------------------------------------------------
+
+SELECT LENGTH('yash');
+→ Returns bytes used to store string.
+
+SELECT CHAR_LENGTH('yash');
+→ Returns total number of characters.
+
+USE:
+✔ CHAR_LENGTH() for text length  
+✔ LENGTH() for storage size  
+
+====================================================================
+# 🔟 TRIM(), LTRIM(), RTRIM()
+# ---------------------------------------------------------------
+Used to remove extra characters/spaces.
+
+SELECT CHAR_LENGTH('   gaurav   ');
+
+SELECT TRIM('gauravnnnnn');
+
+-- Remove specific character from both sides
+SELECT TRIM(BOTH 'n' FROM 'gauravnnnnn');
+
+SELECT name, TRIM(BOTH 'a' FROM name)  
+FROM country;
+
+====================================================================
+# 1️⃣1️⃣ LPAD() & RPAD()
+# ---------------------------------------------------------------
+Used to pad string from left or right.
+
+SELECT name, population,  
+LPAD(population, 9, '0')  
+FROM country;
+
+USE:
+✔ Formatting numeric values  
+✔ Display consistency  
+
+====================================================================
+SUMMARY
+====================================================================
+
+✔ SHOW DATABASES / USE / SHOW TABLES → DB navigation  
+✔ UPPER(), LOWER() → text case handling  
+✔ CONCAT(), CONCAT_WS() → join strings  
+✔ SUBSTR() → extract text  
+✔ LIKE → pattern matching  
+✔ INSTR() → find character position  
+✔ LENGTH() → bytes  
+✔ CHAR_LENGTH() → characters  
+✔ TRIM() → remove unwanted characters  
+✔ LPAD(), RPAD() → formatting output  
+
+END OF NOTES.
+====================================================================

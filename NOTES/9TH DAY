@@ -1,0 +1,179 @@
+====================================================================
+📌 SQL NUMERIC & DATE FUNCTIONS (NOTES + EXAMPLES)
+====================================================================
+
+SQL provides **built-in functions** to perform operations on:
+✔ Numbers  
+✔ Dates & Time  
+
+These functions help in:
+✔ Calculations  
+✔ Rounding values  
+✔ Date manipulation  
+✔ Formatting date & time  
+
+====================================================================
+BASIC DATABASE COMMANDS
+--------------------------------------------------------------------
+use world;
+show tables;
+====================================================================
+
+
+====================================================================
+# 1️⃣ NUMERIC FUNCTIONS
+====================================================================
+
+------------------------------------------------------------
+🔹 ROUND()
+------------------------------------------------------------
+DEFINITION:
+Used to round a number to nearest integer or decimal places.
+
+SYNTAX:
+ROUND(number, decimals)
+
+EXAMPLES:
+--------------------------------------------------------------------
+select lifeexpectancy, round(lifeexpectancy) from country;
+
+select 83.62, round(83.687, 2);      -- rounds to 2 decimal places
+
+select 456.23, round(456.23, -2);    -- rounds to nearest hundred
+
+
+------------------------------------------------------------
+🔹 POWER FUNCTION → POW()
+------------------------------------------------------------
+DEFINITION:
+Used to calculate power of a number.
+
+SYNTAX:
+POW(base, exponent)
+
+EXAMPLE:
+--------------------------------------------------------------------
+select pow(2,3);   -- Output: 8
+
+
+------------------------------------------------------------
+🔹 CEIL()
+------------------------------------------------------------
+DEFINITION:
+Rounds a number **UP** to the nearest integer.
+
+EXAMPLE:
+--------------------------------------------------------------------
+select ceil(3.0000008);   -- Output: 4
+
+
+------------------------------------------------------------
+🔹 FLOOR()
+------------------------------------------------------------
+DEFINITION:
+Rounds a number **DOWN** to the nearest integer.
+
+EXAMPLE:
+--------------------------------------------------------------------
+select floor(3.456);      -- Output: 3
+
+
+====================================================================
+# 2️⃣ DATE & TIME FUNCTIONS
+====================================================================
+
+------------------------------------------------------------
+🔹 NOW(), CURDATE(), CURRENT_TIME()
+------------------------------------------------------------
+DEFINITION:
+Used to get current date & time.
+
+NOW() and CURRENT_TIMESTAMP() are SAME.
+
+EXAMPLES:
+--------------------------------------------------------------------
+select now();                -- date + time
+select curdate();            -- only date
+select current_time();       -- only time
+select current_timestamp();  -- date + time
+
+
+------------------------------------------------------------
+🔹 ADDDATE()
+------------------------------------------------------------
+DEFINITION:
+Used to add days or months to a date.
+
+SYNTAX:
+ADDDATE(date, value)
+ADDDATE(date, INTERVAL value unit)
+
+EXAMPLES:
+--------------------------------------------------------------------
+select now(), adddate(now(), 2);              -- add 2 days
+
+select now(), adddate(now(), interval 3 month); -- add 3 months
+
+
+------------------------------------------------------------
+🔹 EXTRACT()
+------------------------------------------------------------
+DEFINITION:
+Used to extract specific part from date (year, month, week, etc.)
+
+SYNTAX:
+EXTRACT(unit FROM date)
+
+EXAMPLE:
+--------------------------------------------------------------------
+select now(), extract(week from now());
+
+
+------------------------------------------------------------
+🔹 DATE_FORMAT()
+------------------------------------------------------------
+DEFINITION:
+Used to format date into readable string format.
+
+SYNTAX:
+DATE_FORMAT(date, format)
+
+EXAMPLE:
+--------------------------------------------------------------------
+select now(), date_format(now(), 
+'month is %M & year is %Y');
+
+
+====================================================================
+COMMON DATE FORMAT SYMBOLS
+--------------------------------------------------------------------
+%Y → Year (2025)  
+%M → Month name (January)  
+%m → Month number  
+%d → Day  
+%H → Hour  
+%i → Minutes  
+%s → Seconds  
+
+====================================================================
+SUMMARY
+====================================================================
+✔ ROUND() → rounds values  
+✔ POW() → power calculation  
+✔ CEIL() → upper rounding  
+✔ FLOOR() → lower rounding  
+
+✔ NOW() → current date & time  
+✔ CURDATE() → current date  
+✔ ADDDATE() → add days/months  
+✔ EXTRACT() → get part of date  
+✔ DATE_FORMAT() → custom date format  
+
+✔ Used heavily in:
+   • Reports  
+   • Analytics  
+   • Data Cleaning  
+   • DBMS & SQL Interviews  
+
+END OF NOTES
+====================================================================

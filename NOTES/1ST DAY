@@ -1,0 +1,169 @@
+====================================================================
+📌 SQL BASIC COMMANDS (USE, SELECT, DESCRIBE, ALIAS) — NOTES + EXAMPLES
+====================================================================
+
+SQL (Structured Query Language) is used to store, retrieve, update,
+and manage data in relational databases.
+
+Below are the MOST IMPORTANT basic SQL commands used in MySQL.
+
+====================================================================
+
+# 1️⃣ USE DATABASE
+# ---------------------------------------------------------------
+DEFINITION:
+Used to select/activate a database so that you can perform operations
+on its tables.
+
+SYNTAX:
+    USE database_name;
+====================================================================
+*/
+
+USE world;       -- selecting the 'world' database
+
+
+--------------------------------------------------------------------
+====================================================================
+# 2️⃣ SHOW DATABASES
+# ---------------------------------------------------------------
+Shows a list of all databases stored in the MySQL server.
+====================================================================
+*/
+
+SHOW DATABASES;
+
+
+--------------------------------------------------------------------
+====================================================================
+# 3️⃣ CHECK CURRENT DATABASE
+# ---------------------------------------------------------------
+MySQL function to see which database is currently selected.
+====================================================================
+*/
+
+SELECT DATABASE();
+
+
+--------------------------------------------------------------------
+====================================================================
+# 4️⃣ SHOW TABLES
+# ---------------------------------------------------------------
+Displays all tables present inside the currently selected database.
+====================================================================
+*/
+
+SHOW TABLES;
+
+
+--------------------------------------------------------------------
+====================================================================
+# 5️⃣ DESCRIBE TABLE
+# ---------------------------------------------------------------
+DEFINITION:
+`DESCRIBE table_name;` shows the structure of a table:
+✔ Columns  
+✔ Datatypes  
+✔ NULL/NOT NULL  
+✔ Keys  
+✔ Defaults  
+
+====================================================================
+*/
+
+DESCRIBE city;     -- shows structure of the 'city' table
+
+
+--------------------------------------------------------------------
+====================================================================
+# 6️⃣ SELECT ALL DATA
+# ---------------------------------------------------------------
+DEFINITION:
+SELECT * retrieves all columns from the table.
+====================================================================
+*/
+
+SELECT * FROM city;    -- fetch complete data
+
+
+--------------------------------------------------------------------
+====================================================================
+# 7️⃣ SELECT SPECIFIC COLUMNS
+# ---------------------------------------------------------------
+DEFINITION:
+Choose only required columns instead of fetching full table.
+====================================================================
+*/
+
+SELECT population, name, district FROM city;
+
+SELECT name, population
+FROM city;
+
+
+--------------------------------------------------------------------
+====================================================================
+# 8️⃣ USING EXPRESSIONS IN SELECT
+# ---------------------------------------------------------------
+You can perform calculations directly inside SELECT.
+====================================================================
+*/
+
+SELECT 
+    name, 
+    population, 
+    population + 10 AS increased_population 
+FROM city;
+
+
+--------------------------------------------------------------------
+====================================================================
+# 9️⃣ MULTILINE SELECT STATEMENTS
+# ---------------------------------------------------------------
+You can break long SELECT queries into multiple lines for readability.
+====================================================================
+*/
+
+SELECT 
+    name,
+    population,
+    countrycode,
+    population
+FROM city;
+
+
+--------------------------------------------------------------------
+====================================================================
+# 🔟 ALIAS (AS) — NICKNAME FOR COLUMNS
+# ---------------------------------------------------------------
+DEFINITION:
+Aliasing renames a column or table temporarily for readability.
+
+`AS` → used to give custom names.
+
+====================================================================
+*/
+
+SELECT *, 
+       population * 2 AS new_population
+FROM country;
+
+-- new_population is an alias
+
+
+--------------------------------------------------------------------
+====================================================================
+SUMMARY
+====================================================================
+✔ USE database_name   → activate a database  
+✔ SHOW DATABASES      → list all available databases  
+✔ SELECT DATABASE()   → check selected DB  
+✔ SHOW TABLES         → list tables inside DB  
+✔ DESCRIBE table      → show table structure  
+✔ SELECT *            → select all columns  
+✔ SELECT column1,...  → select specific columns  
+✔ Aliases (AS)        → rename columns  
+✔ SQL is not case-sensitive → but UPPERCASE keywords recommended  
+
+END OF NOTES.
+====================================================================

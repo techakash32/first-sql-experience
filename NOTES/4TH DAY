@@ -1,0 +1,128 @@
+====================================================================
+📌 RELATIONSHIPS IN DBMS (NOTES + EXAMPLES)
+====================================================================
+
+A Relationship in DBMS defines HOW two or more tables/entities
+are connected to each other.
+
+Relationships are created using **KEYS** (Primary Key & Foreign Key).
+
+====================================================================
+WHY DO WE USE RELATIONSHIPS ?
+--------------------------------------------------------------------
+✔ To connect related data from different tables  
+✔ To avoid data duplication  
+✔ To maintain data integrity  
+✔ To represent real-world connections  
+✔ To enable meaningful queries using JOIN  
+
+====================================================================
+TYPES OF RELATIONSHIPS IN DBMS
+--------------------------------------------------------------------
+1️⃣ One-to-One (1:1)  
+2️⃣ One-to-Many (1:M)  
+3️⃣ Many-to-One (M:1)  
+4️⃣ Many-to-Many (M:M)    
+
+====================================================================
+# 1️⃣ ONE-TO-ONE RELATIONSHIP (1:1)
+# ---------------------------------------------------------------
+DEFINITION:
+One record in Table A is related to ONLY ONE record in Table B.
+
+Example:
+PERSON ↔ PASSPORT  
+
+PERSON table:
+person_id (PK)
+
+PASSPORT table:
+passport_id (PK)
+person_id (FK)
+
+USE:
+✔ When extra information is optional  
+✔ Security-related data  
+
+====================================================================
+# 2️⃣ ONE-TO-MANY RELATIONSHIP (1:M)
+# ---------------------------------------------------------------
+DEFINITION:
+One record in Table A can be related to MANY records in Table B,
+but Table B record relates to ONLY ONE record in Table A.
+
+Example:
+DEPARTMENT → EMPLOYEE  
+
+DEPARTMENT table:
+dept_id (PK)
+
+EMPLOYEE table:
+emp_id (PK)
+dept_id (FK)
+
+USE:
+✔ Most common relationship  
+✔ Parent-child data  
+
+====================================================================
+# 3️⃣ MANY-TO-ONE RELATIONSHIP (M:1)  
+# ---------------------------------------------------------------
+DEFINITION:
+Many records in Table A are related to ONE record in Table B.
+
+Example:
+EMPLOYEE → DEPARTMENT  
+
+NOTE:
+✔ This is the reverse view of One-to-Many  
+
+====================================================================
+# 4️⃣ MANY-TO-MANY RELATIONSHIP (M:M)
+# ---------------------------------------------------------------
+DEFINITION:
+Many records in Table A are related to MANY records in Table B.
+
+Example:
+STUDENT ↔ COURSE  
+
+IMPLEMENTATION:
+✔ Requires a JUNCTION TABLE  
+
+STUDENT_COURSE table:
+student_id (FK)
+course_id (FK)
+
+USE:
+✔ Real-world scenarios  
+✔ Complex relationships  
+
+====================================================================
+RELATIONSHIP USING KEYS
+--------------------------------------------------------------------
+✔ Primary Key (PK) → Unique identifier  
+✔ Foreign Key (FK) → References PK of another table  
+
+Example:
+EMPLOYEE.dept_id → DEPARTMENT.dept_id  
+
+====================================================================
+REAL-WORLD EXAMPLES
+--------------------------------------------------------------------
+✔ User → Orders (1:M)  
+✔ Country → Cities (1:M)  
+✔ Student ↔ Subject (M:M)  
+✔ Person ↔ Aadhaar (1:1)  
+
+====================================================================
+SUMMARY
+====================================================================
+
+✔ Relationships connect tables  
+✔ Foreign Key creates relationship  
+✔ One-to-Many is most common  
+✔ Many-to-Many needs a junction table  
+✔ Relationships ensure data integrity  
+
+END OF NOTES
+====================================================================

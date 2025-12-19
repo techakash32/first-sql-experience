@@ -1,0 +1,152 @@
+====================================================================
+📌 SQL NOTES — DATABASE SELECTION, FILTERING, WHERE, IN, BETWEEN, LIKE
+====================================================================
+
+These commands are used to explore databases, view tables, and filter
+data using different SQL conditions.
+
+====================================================================
+# 1️⃣ SHOW DATABASES & SELECT A DATABASE
+# ---------------------------------------------------------------
+SHOW DATABASES;  
+→ Lists all available databases in MySQL.
+
+USE WORLD;  
+→ Selects the database named "world" to work on.
+
+SHOW TABLES;  
+→ Shows all tables inside the selected database.
+
+====================================================================
+# 2️⃣ DESCRIBE A TABLE
+# ---------------------------------------------------------------
+DESCRIBE CITY;  
+→ Shows structure of CITY table:
+   • column names
+   • data types
+   • NULL info
+   • keys
+
+====================================================================
+# 3️⃣ SELECT STATEMENTS
+# ---------------------------------------------------------------
+SELECT * FROM CITY;
+→ Displays all rows & all columns from CITY.
+
+SELECT NAME, POPULATION FROM CITY;
+→ Shows only selected columns.
+
+====================================================================
+# 4️⃣ WHERE CLAUSE (Filtering Rows)
+# ---------------------------------------------------------------
+Used to filter rows based on conditions.
+
+Examples:
+SELECT * FROM CITY WHERE DISTRICT='Zuid-Holland';
+SELECT * FROM CITY WHERE COUNTRYCODE='ARG';
+SELECT * FROM CITY WHERE ID='79';
+SELECT * FROM CITY WHERE POPULATION > 600000;
+SELECT * FROM CITY WHERE COUNTRYCODE != 'ARG';.
+
+USE CASES:
+✔ Filter by text  
+✔ Filter by numbers  
+✔ Filter by ID  
+✔ Use comparison operators (=, !=, >, <, >=, <=)
+
+====================================================================
+# 5️⃣ IN OPERATOR (Match multiple values)
+# ---------------------------------------------------------------
+SELECT * FROM COUNTRY  
+WHERE CONTINENT IN ('NORTH AMERICA','EUROPE','ASIA');
+
+USE:
+✔ When checking multiple values in a column  
+✔ Faster than writing multiple OR conditions  
+
+====================================================================
+# 6️⃣ INDEPYEAR FILTERING EXAMPLES
+# ---------------------------------------------------------------
+
+-- Specific values
+SELECT NAME, CONTINENT, INDEPYEAR  
+FROM COUNTRY  
+WHERE INDEPYEAR IN (1901, 1960);
+
+-- Between a range (inclusive)
+SELECT NAME, CONTINENT, INDEPYEAR  
+FROM COUNTRY  
+WHERE INDEPYEAR BETWEEN 1901 AND 1960;
+
+-- NOT between range
+SELECT NAME, CONTINENT, INDEPYEAR  
+FROM COUNTRY  
+WHERE INDEPYEAR NOT BETWEEN 1901 AND 1960;
+
+====================================================================
+# 7️⃣ PRACTICE QUESTIONS
+# ---------------------------------------------------------------
+
+SHOW TABLES;
+
+SELECT CODE, NAME, REGION  
+FROM COUNTRY  
+WHERE REGION != 'MIDDLE EAST';
+
+SELECT NAME, INDEPYEAR, POPULATION,  
+POPULATION*0.1 + POPULATION AS NEW_POPULATION  
+FROM COUNTRY;
+
+SELECT * FROM COUNTRY  
+WHERE LIFEEXPECTANCY IN (38.3 , 66.4);
+
+====================================================================
+# 8️⃣ LIKE OPERATOR (Pattern Searching)
+# ---------------------------------------------------------------
+Used to search text patterns.
+
+WILD CARDS:
+%  → zero or more characters  
+_  → exactly one character  
+
+Examples:
+
+-- Starts with A
+SELECT NAME, CONTINENT  
+FROM COUNTRY  
+WHERE NAME LIKE 'A%';
+
+-- Ends with A
+SELECT NAME, CONTINENT  
+FROM COUNTRY  
+WHERE NAME LIKE '%A';
+
+-- Contains AD anywhere
+SELECT NAME, CONTINENT  
+FROM COUNTRY  
+WHERE NAME LIKE '%AD%';
+
+-- UNDERSCORE (_) means ONE character
+SELECT NAME, CONTINENT  
+FROM COUNTRY  
+WHERE NAME LIKE 'IN___';    -- IN + 3 ANY characters
+
+====================================================================
+SUMMARY
+====================================================================
+
+✔ SHOW DATABASES – list all DBs  
+✔ USE DB – select database  
+✔ SHOW TABLES – list tables  
+✔ DESCRIBE – view table structure  
+
+✔ WHERE – filter data  
+✔ IN – match multiple values  
+✔ BETWEEN – search within a range  
+✔ LIKE – pattern matching  
+✔ Wildcards:
+      %  → many characters  
+      _  → one character  
+
+END OF NOTES.
+====================================================================

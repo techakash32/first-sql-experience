@@ -1,0 +1,100 @@
+====================================================================
+📌 CANDIDATE KEY IN DBMS (NOTES + EXAMPLES)
+====================================================================
+
+A CANDIDATE KEY is a **minimal Super Key** that can
+**uniquely identify a record** in a table.
+
+It contains **NO extra attributes**.
+
+====================================================================
+WHY DO WE USE CANDIDATE KEY?
+--------------------------------------------------------------------
+✔ To uniquely identify each record  
+✔ To choose the Primary Key  
+✔ To avoid redundancy  
+✔ To maintain data integrity  
+
+====================================================================
+DEFINITION (EXAM READY)
+--------------------------------------------------------------------
+A Candidate Key is a **minimal set of attributes**
+that uniquely identifies each tuple in a relation.
+
+====================================================================
+EXAMPLE TABLE: STUDENT
+--------------------------------------------------------------------
+| Roll_No | Aadhaar | Email | Name |
+--------------------------------------------------------------------
+
+Candidate Keys:
+--------------------------------------------------------------------
+✔ {Roll_No}  
+✔ {Aadhaar}  
+✔ {Email}  
+
+❌ NOT Candidate Keys:
+--------------------------------------------------------------------
+{Roll_No, Name}  → extra attribute  
+{Aadhaar, Name}  → not minimal  
+
+====================================================================
+CANDIDATE KEY vs SUPER KEY
+--------------------------------------------------------------------
+✔ Super Key:
+   → May contain extra attributes  
+   → Not minimal  
+
+✔ Candidate Key:
+   → Minimal Super Key  
+   → No unnecessary attributes  
+
+Example:
+{Roll_No, Name} → Super Key  
+{Roll_No} → Candidate Key  
+
+====================================================================
+CANDIDATE KEY vs PRIMARY KEY
+--------------------------------------------------------------------
+✔ Candidate Key:
+   → Many possible in a table  
+   → Can contain NULL (theoretically)  
+
+✔ Primary Key:
+   → Only ONE per table  
+   → Cannot be NULL  
+   → Selected from Candidate Keys  
+
+====================================================================
+IMPORTANT RULES
+--------------------------------------------------------------------
+✔ Every Candidate Key is a Super Key  
+✔ Primary Key is chosen from Candidate Keys  
+✔ A table can have multiple Candidate Keys  
+✔ Candidate Keys are unique & minimal  
+
+====================================================================
+REAL-LIFE EXAMPLE
+--------------------------------------------------------------------
+ATM CARD SYSTEM:
+--------------------------------------------------------------------
+Card_Number, Account_Number, Aadhaar
+
+Candidate Keys:
+✔ Card_Number  
+✔ Account_Number  
+✔ Aadhaar  
+
+Primary Key:
+✔ Card_Number (chosen by DB designer)
+
+====================================================================
+SUMMARY
+====================================================================
+✔ Candidate Key = Minimal Super Key  
+✔ Uniquely identifies records  
+✔ Used to select Primary Key  
+✔ Fundamental concept in DBMS  
+
+END OF NOTES
+====================================================================
