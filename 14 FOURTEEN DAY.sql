@@ -37,5 +37,18 @@ desc actor_cp;
 select * from actor_cp;
 
 
+-- 4.TURNCATE
+
+-- delete and turncate diiference 
+-- turncate is ddl and in turncate we don't provide any condition but in delete condition.
+-- in turncate we can't revert(rollback) data but in delete we can rollback.
+-- incase if we have excute any ddl statement we can't rollback.
+-- object = we can be used to  manage, store and refer the data.
+
+select * from actor_cp;
+truncate actor_cp;
+
+
+
  
 
