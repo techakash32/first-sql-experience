@@ -1,0 +1,107 @@
+=====================================================================
+📌 SQL CHAR & VARCHAR (NOTES + EXAMPLES)
+=====================================================================
+
+CHAR and VARCHAR are **string (text) data types** used to store:
+✔ Names  
+✔ Codes  
+✔ Text values  
+
+====================================================================
+# 1️⃣ CHAR
+====================================================================
+
+------------------------------------------------------------
+🔹 CHAR
+------------------------------------------------------------
+DEFINITION:
+CHAR is a **fixed-length** string data type.
+
+RULES:
+✔ Always uses full defined length  
+✔ Adds extra spaces if data is smaller  
+✔ Faster than VARCHAR  
+
+BEST USED FOR:
+✔ Fixed size values  
+✔ Codes & flags  
+
+EXAMPLE:
+--------------------------------------------------------------------
+create table person (
+  gender char(1)
+);
+
+insert into person values ('M');
+-- Stored as: 'M ' (1 char + space)
+
+------------------------------------------------------------
+
+
+====================================================================
+# 2️⃣ VARCHAR
+====================================================================
+
+------------------------------------------------------------
+🔹 VARCHAR
+------------------------------------------------------------
+DEFINITION:
+VARCHAR is a **variable-length** string data type.
+
+RULES:
+✔ Uses only required space  
+✔ Saves memory  
+✔ Slightly slower than CHAR  
+
+BEST USED FOR:
+✔ Names  
+✔ Emails  
+✔ Addresses  
+
+EXAMPLE:
+--------------------------------------------------------------------
+create table user (
+  name varchar(50)
+);
+
+insert into user values ('Akash');
+-- Stored as: 'Akash' (no extra space)
+
+------------------------------------------------------------
+
+
+====================================================================
+COMPARISON TABLE
+====================================================================
+
+| Feature        | CHAR            | VARCHAR         |
+|---------------|-----------------|-----------------|
+| Length        | Fixed           | Variable        |
+| Space Usage   | More            | Efficient       |
+| Speed         | Faster          | Slightly slower |
+| Best For      | Codes, flags    | Text data       |
+
+====================================================================
+INTERVIEW ONE-LINERS
+====================================================================
+
+✔ CHAR → fixed length, fast  
+✔ VARCHAR → flexible length, space-saving  
+✔ Use CHAR when length is constant  
+✔ Use VARCHAR when length varies  
+
+====================================================================
+SUMMARY
+====================================================================
+
+✔ CHAR → fixed size text  
+✔ VARCHAR → dynamic size text  
+✔ CHAR wastes space if data is small  
+✔ VARCHAR stores only required size  
+
+✔ Common usage:
+   • CHAR → Gender, Country code  
+   • VARCHAR → Name, Email  
+
+END OF NOTES
+====================================================================
