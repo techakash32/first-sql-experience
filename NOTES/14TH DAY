@@ -1,0 +1,180 @@
+=====================================================================
+📌 SQL SUBQUERY (NOTES + TYPES + EXAMPLES)
+=====================================================================
+
+A SUBQUERY is a **query inside another query**.
+It is also called **nested query**.
+
+Used to:
+✔ Filter data  
+✔ Compare values  
+✔ Perform complex queries easily  
+
+====================================================================
+# TYPES OF SUBQUERIES
+====================================================================
+
+✔ Single-row Subquery  
+✔ Multiple-row Subquery  
+✔ Correlated Subquery  
+
+====================================================================
+# 1️⃣ SINGLE-ROW SUBQUERY
+====================================================================
+
+------------------------------------------------------------
+🔹 SINGLE-ROW SUBQUERY
+------------------------------------------------------------
+DEFINITION:
+Returns **only ONE value**.
+
+USED WITH OPERATORS:
+=   >   <   >=   <=
+
+EXAMPLE:
+--------------------------------------------------------------------
+select name, population
+from world
+where population >
+(
+  select population
+  from world
+  where name = 'Germany'
+);
+
+------------------------------------------------------------
+
+
+====================================================================
+# 2️⃣ MULTIPLE-ROW SUBQUERY
+====================================================================
+
+------------------------------------------------------------
+🔹 MULTIPLE-ROW SUBQUERY
+------------------------------------------------------------
+DEFINITION:
+Returns **MORE THAN ONE value**.
+
+USED WITH OPERATORS:
+IN, ANY, ALL
+
+------------------------------------------------------------
+🔹 IN
+------------------------------------------------------------
+EXAMPLE:
+--------------------------------------------------------------------
+select name
+from world
+where continent in
+(
+  select continent
+  from world
+  where name = 'India'
+);
+
+------------------------------------------------------------
+
+------------------------------------------------------------
+🔹 ANY
+------------------------------------------------------------
+DEFINITION:
+Condition true if **any one** value matches.
+
+EXAMPLE:
+--------------------------------------------------------------------
+select name, population
+from world
+where population > ANY
+(
+  select population
+  from world
+  where continent = 'Europe'
+);
+
+------------------------------------------------------------
+
+------------------------------------------------------------
+🔹 ALL
+------------------------------------------------------------
+DEFINITION:
+Condition true if value matches **all** values.
+
+EXAMPLE:
+--------------------------------------------------------------------
+select name, population
+from world
+where population > ALL
+(
+  select population
+  from world
+  where continent = 'Europe'
+);
+
+------------------------------------------------------------
+
+
+====================================================================
+# 3️⃣ CORRELATED SUBQUERY
+====================================================================
+
+------------------------------------------------------------
+🔹 CORRELATED SUBQUERY
+------------------------------------------------------------
+DEFINITION:
+Subquery that **depends on outer query**.
+Runs **once for each row**.
+
+KEY POINT:
+✔ Uses outer query column  
+✔ Slower but powerful  
+
+EXAMPLE:
+--------------------------------------------------------------------
+select name, continent, population
+from world w1
+where population >
+(
+  select avg(population)
+  from world w2
+  where w1.continent = w2.continent
+);
+
+------------------------------------------------------------
+
+
+====================================================================
+COMPARISON SUMMARY
+====================================================================
+
+| Type            | Returns        | Operators Used      |
+|-----------------|---------------|---------------------|
+| Single-row      | One value     | =, >, <             |
+| Multiple-row    | Many values   | IN, ANY, ALL        |
+| Correlated      | Per row value | Depends on outer    |
+
+====================================================================
+INTERVIEW ONE-LINERS
+====================================================================
+
+✔ Subquery → query inside another query  
+✔ Single-row → returns one value  
+✔ Multiple-row → returns many values  
+✔ Correlated → runs per row  
+
+✔ Correlated subquery is **slower** than normal subquery  
+
+====================================================================
+SUMMARY
+====================================================================
+
+✔ Subqueries simplify complex logic  
+✔ Used in WHERE, HAVING, SELECT  
+✔ Correlated subquery depends on outer query  
+
+✔ Important for:
+   • SQL interviews  
+   • LeetCode problems  
+   • Analytics queries  
+
+END OF NOTES
+====================================================================
