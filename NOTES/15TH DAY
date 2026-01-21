@@ -1,0 +1,187 @@
+=====================================================================
+📌 SQL INTERVIEW QUESTIONS (TOP 50 – QUICK NOTES)
+=====================================================================
+
+====================================================================
+# BASIC SQL (1–15)
+====================================================================
+
+1️⃣ What is SQL?
+👉 Structured Query Language used to manage databases.
+
+2️⃣ What is a database?
+👉 Organized collection of data.
+
+3️⃣ What is a table?
+👉 Data stored in rows and columns.
+
+4️⃣ What is a primary key?
+👉 Uniquely identifies each row (no NULL, no duplicate).
+
+5️⃣ What is a foreign key?
+👉 Creates relationship between tables.
+
+6️⃣ What is NULL?
+👉 Missing or unknown value.
+
+7️⃣ Difference between DELETE and TRUNCATE?
+👉 DELETE removes rows, TRUNCATE empties table.
+
+8️⃣ Difference between DROP and TRUNCATE?
+👉 DROP deletes table, TRUNCATE deletes data only.
+
+9️⃣ What is UNIQUE constraint?
+👉 Prevents duplicate values.
+
+🔟 What is NOT NULL?
+👉 Column must have value.
+
+1️⃣1️⃣ What is DEFAULT?
+👉 Assigns automatic value.
+
+1️⃣2️⃣ What is CHECK constraint?
+👉 Restricts values based on condition.
+
+1️⃣3️⃣ What is AUTO_INCREMENT?
+👉 Automatically increases numeric value.
+
+1️⃣4️⃣ What is DISTINCT?
+👉 Removes duplicate rows from result.
+
+1️⃣5️⃣ What is LIMIT?
+👉 Restricts number of rows returned.
+
+====================================================================
+# DATA TYPES (16–20)
+====================================================================
+
+1️⃣6️⃣ INT vs TINYINT?
+👉 INT for large numbers, TINYINT for small numbers.
+
+1️⃣7️⃣ FLOAT vs DOUBLE?
+👉 DOUBLE is more precise.
+
+1️⃣8️⃣ CHAR vs VARCHAR?
+👉 CHAR fixed length, VARCHAR variable length.
+
+1️⃣9️⃣ DATE vs DATETIME?
+👉 DATE = only date, DATETIME = date + time.
+
+2️⃣0️⃣ BOOLEAN in SQL?
+👉 Stored as TINYINT (0,1).
+
+====================================================================
+# JOINS (21–26)
+====================================================================
+
+2️⃣1️⃣ What is JOIN?
+👉 Combines data from multiple tables.
+
+2️⃣2️⃣ INNER JOIN?
+👉 Returns matching records only.
+
+2️⃣3️⃣ LEFT JOIN?
+👉 All left table rows + matching right.
+
+2️⃣4️⃣ RIGHT JOIN?
+👉 All right table rows + matching left.
+
+2️⃣5️⃣ FULL JOIN?
+👉 All records from both tables.
+
+2️⃣6️⃣ SELF JOIN?
+👉 Table joined with itself.
+
+====================================================================
+# CLAUSES & FUNCTIONS (27–35)
+====================================================================
+
+2️⃣7️⃣ WHERE vs HAVING?
+👉 WHERE filters rows, HAVING filters groups.
+
+2️⃣8️⃣ GROUP BY?
+👉 Groups rows with same values.
+
+2️⃣9️⃣ ORDER BY?
+👉 Sorts result set.
+
+3️⃣0️⃣ LIKE?
+👉 Pattern matching using % and _.
+
+3️⃣1️⃣ SUBSTRING?
+👉 Extracts part of text.
+
+3️⃣2️⃣ CONCAT?
+👉 Joins strings.
+
+3️⃣3️⃣ COUNT()?
+👉 Counts rows.
+
+3️⃣4️⃣ AVG()?
+👉 Calculates average.
+
+3️⃣5️⃣ MAX() / MIN()?
+👉 Finds highest / lowest value.
+
+====================================================================
+# SUBQUERIES & ADVANCED (36–45)
+====================================================================
+
+3️⃣6️⃣ What is a subquery?
+👉 Query inside another query.
+
+3️⃣7️⃣ Single-row subquery?
+👉 Returns one value.
+
+3️⃣8️⃣ Multiple-row subquery?
+👉 Returns multiple values.
+
+3️⃣9️⃣ Correlated subquery?
+👉 Runs once per row.
+
+4️⃣0️⃣ IN vs EXISTS?
+👉 IN checks list, EXISTS checks condition.
+
+4️⃣1️⃣ ANY vs ALL?
+👉 ANY = one match, ALL = all match.
+
+4️⃣2️⃣ What is index?
+👉 Improves query performance.
+
+4️⃣3️⃣ Primary key vs Index?
+👉 PK ensures uniqueness, index improves speed.
+
+4️⃣4️⃣ What is view?
+👉 Virtual table based on query.
+
+4️⃣5️⃣ What is normalization?
+👉 Reduces data redundancy.
+
+====================================================================
+# TRANSACTIONS & SECURITY (46–50)
+====================================================================
+
+4️⃣6️⃣ What is transaction?
+👉 Group of SQL operations.
+
+4️⃣7️⃣ COMMIT?
+👉 Saves changes permanently.
+
+4️⃣8️⃣ ROLLBACK?
+👉 Undo changes.
+
+4️⃣9️⃣ ACID properties?
+👉 Atomicity, Consistency, Isolation, Durability.
+
+5️⃣0️⃣ GRANT vs REVOKE?
+👉 GRANT gives permission, REVOKE removes it.
+
+====================================================================
+FINAL TIP
+====================================================================
+✔ Learn definitions + differences  
+✔ Practice SELECT, JOIN, SUBQUERY daily  
+✔ These 50 questions cover 80% interviews  
+
+END OF INTERVIEW NOTES
+====================================================================
